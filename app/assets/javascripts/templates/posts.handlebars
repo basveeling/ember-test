@@ -1,0 +1,4 @@
+{{#each post in controller}}
+<h1><a {{action showPost context="post" href=true}}>{{post.title}}</a></h1>
+<div>{{post.body}}</div>
+{{/each}}
