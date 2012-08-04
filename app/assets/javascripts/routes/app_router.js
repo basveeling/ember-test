@@ -11,9 +11,6 @@ EmberTest.Router = Ember.Router.extend({
       route: '/posts',
       // showPost: Ember.Route.transitionTo('posts.show'),
       
-      eventTransitions: {
-        showPost: 'posts.show'
-      },
       index: Ember.Route.extend({
         route: '/',
         showPost: function(router,event){
@@ -25,6 +22,9 @@ EmberTest.Router = Ember.Router.extend({
         connectOutlets: function(router) {
           router.get('applicationController').connectOutlet('posts', EmberTest.Post.find());
         },
+        eventTransitions: {
+          showPost: 'posts.show'
+        }
       }),
       show: Ember.Route.extend({
         route: '/:post_id',
